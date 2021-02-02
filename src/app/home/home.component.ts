@@ -9,12 +9,21 @@ import { MoviesService } from '../_services/movies.service';
 export class HomeComponent implements OnInit {
   movies: any;
 
+  fActivities: any[] = [
+    {username:"Josué", title: "The Avengers"},
+    {username:"Héctor", title: "Unchained Django"},
+    {username:"Snake", title: "Her"},
+    {username:"Kidavid", title: "Blade Runner 2077"},
+    {username:"Josué", title: "DUNE"},
+    {username:"Laura", title: "Rebecca"}
+  ];
+
   constructor(
     private moviesService: MoviesService
   ) { }
 
   ngOnInit(): void {
-    this.getMovies();
+    //this.getMovies();
   }
 
   getMovies() {

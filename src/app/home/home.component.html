@@ -1,8 +1,17 @@
-<h1>List of films</h1>
+<h1>Dashboard</h1>
 <div class="container">
-	<div class="row">
-	  <div class="col-sm" *ngFor="let movie of movies">
-		{{movie.title}}
-	  </div>
-	</div>
-  </div>
+	<p class="mute">
+		See what are your friends doing!
+	</p>
+	<div class="column">
+		<div class="row">
+			<div class="card w-100 m-2" *ngFor="let activity of fActivities">
+				<div class="card-body">
+					<!-- Icons -->
+				  	<h5 class="card-title">{{activity?.username}} marked as seen {{activity?.title}}</h5>
+				</div>
+			</div>
+		</div>
+
+	</div>	
+</div>
