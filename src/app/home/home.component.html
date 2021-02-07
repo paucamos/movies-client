@@ -3,15 +3,24 @@
 	<p class="mute">
 		See what are your friends doing!
 	</p>
-	<div class="column">
-		<div class="row">
-			<div class="card w-100 m-2" *ngFor="let activity of fActivities">
-				<div class="card-body">
-					<!-- Icons -->
-				  	<h5 class="card-title">{{activity?.username}} marked as seen {{activity?.title}}</h5>
-				</div>
+	<div class="section-row">
+			<div class="w-50 m-3 section-column maincontent-wrap" *ngFor="let activity of fActivities">
+				<div class="card text-left">
+					<div class="card-header">
+						<a (click)="upvote(activity)"><i class="fas fa-arrow-circle-up"></i></a>
+							{{activity?.votes}}
+						
+						<a (click)="downvote(activity)"><i class="fas fa-arrow-circle-down"></i></a>
+
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">{{activity?.username}} marked as seen {{activity?.title}}</h5>
+					</div>
+					<div class="card-footer text-muted">
+					  {{activity?.date}} days ago
+					</div>
+				  </div>
 			</div>
-		</div>
 
 	</div>	
 </div>
